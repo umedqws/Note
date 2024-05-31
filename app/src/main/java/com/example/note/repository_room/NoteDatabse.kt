@@ -1,4 +1,4 @@
-package com.example.note.repository_room.room
+package com.example.note.repository_room
 
 import android.content.Context
 import androidx.room.Database
@@ -8,7 +8,7 @@ import androidx.room.RoomDatabase
 
 @Database(entities = [Note::class], version = 1)
 abstract class NotesDatabase: RoomDatabase(){
-    abstract val notesDao: NotesDao
+    abstract class notesDao: NotesDao
 
     companion object{
         fun create(context: Context) = Room.databaseBuilder(

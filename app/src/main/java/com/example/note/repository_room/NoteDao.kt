@@ -1,4 +1,4 @@
-package com.example.note.repository_room.room
+package com.example.note.repository_room
 
 import androidx.room.Delete
 import androidx.room.Insert
@@ -11,9 +11,9 @@ interface NotesDao{
     fun getAll(): Flow<List<Note>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend  fun insert(note: Note)
+    fun insert(note: Note)
 
     @Delete
-    suspend fun delete(note: Note)
+    fun delete(note: Note)
 
 }
